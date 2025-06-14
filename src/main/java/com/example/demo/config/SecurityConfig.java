@@ -60,14 +60,14 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // 👉 Cấu hình CORS đầy đủ
+ 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOriginPatterns(Arrays.asList("*")); // Cho phép mọi origin
+        config.setAllowedOriginPatterns(Arrays.asList("*")); 
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
-        config.setAllowCredentials(true); // Nếu bạn cần gửi cookie hoặc Authorization header
+        config.setAllowCredentials(true); 
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
